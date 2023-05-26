@@ -1,11 +1,15 @@
 import { LightningElement, api, wire, track } from 'lwc';
 import { getRecord, getFieldValue } from 'lightning/uiRecordApi';
-import RESULT_DATA_FIELD from '@salesforce/schema/Result__c.Result_Data__c';
+import { getRelatedListRecords } from 'lightning/uiRelatedListApi';
+
+import VERSION_DATA_FIELD from '@salesforce/schema/ContentVersion.VersionData';
+import TITLE_FIELD from '@salesforce/schema/ContentDocumentLink.ContentDocument.Title';
+import LATEST_PUBLISHED_VERSION_FIELD from '@salesforce/schema/ContentDocumentLink.ContentDocument.LatestPublishedVersionId';
 
 import jsyamllib from "@salesforce/resourceUrl/jsyamllib";
 import { loadScript } from 'lightning/platformResourceLoader';
 
-export default class ResultTable extends LightningElement {
+export default class ResultTableFromFile extends LightningElement {
     @api recordId;
     @track relevantFormattedJson;
     _versionId;
@@ -14,15 +18,35 @@ export default class ResultTable extends LightningElement {
     scriptsLoaded = false;
     formattedJson;
 
-    @wire(getRecord, { recordId: '$recordId', fields: [RESULT_DATA_FIELD] })
-    wiredRecord({ data }) {
-        this.result = data;
-        const serializedJson = getFieldValue(this.result, RESULT_DATA_FIELD);
-        const { type, formattedJson } = this.getFormattedData(serializedJson);
+    @wire(getRelatedListRecords, {
+        parentRecordId: '$recordId',
+        relatedListId: 'ContentDocumentLinks',
+        fields: [
+            `${LATEST_PUBLISHED_VERSION_FIELD.objectApiName}.${LATEST_PUBLISHED_VERSION_FIELD.fieldApiName}`,
+            `${TITLE_FIELD.objectApiName}.${TITLE_FIELD.fieldApiName}`
+        ]
+    })
+    docLinksInfo({ data }) {
+        if (data) {
+            const logsDoc = data?.records?.find((doc) => getFieldValue(doc, TITLE_FIELD) === 'output.json');
 
-        this.type = type;
-        this.formattedJson = formattedJson;
-        this.relevantFormattedJson = formattedJson;
+            if (logsDoc) {
+                this._versionId = getFieldValue(logsDoc, LATEST_PUBLISHED_VERSION_FIELD);
+            }
+        }
+    }
+
+    @wire(getRecord, { recordId: '$_versionId', fields: [VERSION_DATA_FIELD] })
+    wiredVersion({ data }) {
+        if (data) {
+            const rawData = getFieldValue(data, VERSION_DATA_FIELD);
+            const serializedJson = this.b64DecodeUnicode(rawData);
+            const { type, formattedJson } = this.getFormattedData(serializedJson);
+
+            this.type = type;
+            this.formattedJson = formattedJson;
+            this.relevantFormattedJson = formattedJson;
+        }
     }
 
     async connectedCallback() {

@@ -1,5 +1,6 @@
 # Copado Recipe GitHub Repository
-Welcome to the Copado Recipe GitHub repository! This repository contains a generic result viewer component that can read a raw log and display information in various formats, including table, YAML, or plain text. This component serves as a starting point for Copado extension developers to build a better user experience and display result output.
+Welcome to the Copado Recipe GitHub repository! This repository contains sample components and recipes to help developers looking to build on top of or extend the Copado Platform to get quickly started. We'll be adding more components in the future.
+Explore the feature branches in this repository and check out the existing samples.
 
 ## Introduction
 A collection of easy-to-digest code examples for copado extension developers. Each recipe demonstrates how to code a specific task in the fewest lines of code possible, while following best practices.
@@ -10,14 +11,15 @@ A collection of easy-to-digest code examples for copado extension developers. Ea
 ## Installation
 To use the result viewer component in your Copado extension project, follow these steps:
 
-Clone the Copado Recipe GitHub repository and Include the result viewer component in your project:
+Clone the Copado Recipe GitHub repository and Include the result viewer component in your **project**:
 ```
-git clone https://github.com/copado-recipes/result-viewer.git
+git clone https://github.com/CopadoSolutions/copado-recipes.git
 ```
 
 
 ## Usage
-In job step of template add this component as the result Previewer
+To use this component to display results outputs, you can enter the component name in the Job Step or Result "Result Viewer Component" field as follows:
+![Logo](https://github.com/CopadoSolutions/copado-recipes/tree/feature/resultTable/assets/logo/logo-1280-676.png?raw=true)
 
 *The ResultViewer component accepts one parameters: `recordId` which is the result Id*
 
@@ -29,6 +31,9 @@ The result viewer component supports the following output formats:
 * Plain Text: Displays the log data as plain text without any formatting.
 
 *Note: The component automatically detects the structure on JSON to display data in the most relevant format*
+
+## How to customize
+To read data from a File related to result record, use the `resultTableFromFile.js`
 
 ## Contributing
 We welcome contributions from the community to enhance and improve the result viewer component. To contribute, please follow these steps:
