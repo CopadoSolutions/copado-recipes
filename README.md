@@ -17,7 +17,7 @@ git clone https://github.com/CopadoSolutions/copado-recipes.git
 
 
 ## Usage
-To use this component to display results outputs, you can enter the component name either in the Job Step or Function "Result Viewer Component" field as follows:
+To use this component to display results outputs, you can enter the component name either in the `Job Step`'s or `Function`'s `Result Viewer Component` field as follows:
 ![Logo](https://github.com/CopadoSolutions/copado-recipes/blob/feature/resultTable/docs/images/Configure%20Result%20Viewer.png)
 
 *The ResultViewer component accepts one parameters: `recordId` which is the result Id*
