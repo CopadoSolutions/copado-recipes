@@ -1,6 +1,5 @@
 # Copado Recipe GitHub Repository
-Welcome to the Copado Recipe GitHub repository! This repository contains sample components and recipes to help developers looking to build on top of or extend the Copado Platform to get quickly started. We'll be adding more components in the future.
-Explore the feature branches in this repository and check out the existing samples.
+Welcome to the Copado Recipes GitHub repository! This repository contains sample components and recipes to help developers looking to extend or build on top of the Copado Platform to get quickly started. We'll be adding more components in the future.
 
 ## Introduction
 A collection of easy-to-digest code examples for copado extension developers. Each recipe demonstrates how to code a specific task in the fewest lines of code possible, while following best practices.
@@ -18,7 +17,7 @@ git clone https://github.com/CopadoSolutions/copado-recipes.git
 
 
 ## Usage
-To use this component to display results outputs, you can enter the component name in the Job Step's Result "Result Viewer Component" field as follows:
+To use this component to display results outputs, you can enter the component name either in the Job Step or Function "Result Viewer Component" field as follows:
 ![Logo](https://github.com/CopadoSolutions/copado-recipes/blob/feature/resultTable/docs/images/Configure%20Result%20Viewer.png)
 
 *The ResultViewer component accepts one parameters: `recordId` which is the result Id*
@@ -30,7 +29,7 @@ The result viewer component supports the following output formats:
 * YAML: Parses the log data as YAML and presents it in a structured YAML format.
 * Plain Text: Displays the log data as plain text without any formatting.
 
-*Note: The component automatically detects the structure on JSON to display data in the most relevant format*
+*Note: The component automatically detects the structure on JSON to display data in the most relevant format. If a specificy JSON format is not supported in the example provided, you can modify this component and adjust it to your use case.*
 
 ## How to customize
 To read data from a File related to result record, use the `resultTableFromFile.js`
