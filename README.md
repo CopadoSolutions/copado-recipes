@@ -30,7 +30,7 @@ The result viewer component supports the following output formats:
 * YAML: Parses the log data as YAML and presents it in a structured YAML format(when data json is a nested object with complex structure).
 * Plain Text: Displays the log data as plain text without any formatting(when the data json is a String).
 
-*Note: The component automatically detects the structure on JSON to display data in the most relevant format. If a specificy JSON format is not supported in the example provided, you can modify this component and adjust it to your use case.*
+*Note: The component automatically detects the structure on JSON to display data in the most relevant format. If a specific JSON format is not supported in the example provided, you can modify this component and adjust it to your use case.*
 
 
 ## How to customize
