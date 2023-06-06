@@ -14,6 +14,7 @@ To use the result viewer component in your Copado extension project, follow thes
 Clone the Copado Recipe GitHub repository and Include the result viewer component in your **project**:
 ```
 git clone https://github.com/CopadoSolutions/copado-recipes.git
+sf project deploy start
 ```
 
 
@@ -26,14 +27,16 @@ To use this component to display results outputs, you can enter the component na
 ### Supported Formats
 The result viewer component supports the following output formats:
 
-* Table: Displays the log information in a tabular format with columns and rows.
-* YAML: Parses the log data as YAML and presents it in a structured YAML format.
-* Plain Text: Displays the log data as plain text without any formatting.
+* Table: Displays the log information in a tabular format with columns and rows(when data json is an Array of object).
+* YAML: Parses the log data as YAML and presents it in a structured YAML format(when data json is a nested object with complex structure).
+* Plain Text: Displays the log data as plain text without any formatting(when the data json is a String).
 
 *Note: The component automatically detects the structure on JSON to display data in the most relevant format*
 
+
 ## How to customize
-To read data from a File related to result record, use the `resultTableFromFile.js`
+* The default version support reading data from copado__Result_Data__c.
+* To read data from a File related to result record, use the `resultTableFromFile.js`, sample code reads the `output.json` change the file name if you need to read data from a different file
 
 ## Contributing
 We welcome contributions from the community to enhance and improve the result viewer component. To contribute, please follow these steps:

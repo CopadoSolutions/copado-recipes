@@ -28,7 +28,7 @@ export default class ResultTableFromFile extends LightningElement {
     })
     docLinksInfo({ data }) {
         if (data) {
-            const logsDoc = data?.records?.find((doc) => getFieldValue(doc, TITLE_FIELD) === 'output.json');
+            const logsDoc = data?.records?.find((doc) => getFieldValue(doc, TITLE_FIELD) === 'output.json'); // change the file name from where data should be fetched
 
             if (logsDoc) {
                 this._versionId = getFieldValue(logsDoc, LATEST_PUBLISHED_VERSION_FIELD);
