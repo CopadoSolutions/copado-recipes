@@ -19,7 +19,8 @@ sf project deploy start
 
 ## Usage
 To use this component to display results outputs, you can enter the component name either in the `Job Step`'s or `Function`'s `Result Viewer Component` field as follows:
-![Logo](https://github.com/CopadoSolutions/copado-recipes/blob/feature/resultTable/docs/images/Configure%20Result%20Viewer.png)
+![Logo](https://github.com/CopadoSolutions/copado-recipes/blob/main/docs/images/Configure%20Function%20Result%20Viewer.png)
+
 
 *The ResultViewer component accepts one parameters: `recordId` which is the result Id*
 
@@ -34,8 +35,8 @@ The result viewer component supports the following output formats:
 
 
 ## How to customize
-* The default version support reading data from copado__Result_Data__c.
-* To read data from a File related to result record, use the `resultTableFromFile.js`, sample code reads the `output.json` change the file name if you need to read data from a different file
+* The default version (`resultTable.js`) support reading data from the `copado__Result_Data__c` field.
+* If instead you want to read data from a File related to result record, use the `resultTableFromFile.js` sample code that will read from any file named `output.json`.  Change the file name if you need to read data from a different file.
 
 ## Contributing
 We welcome contributions from the community to enhance and improve the result viewer component. To contribute, please follow these steps:
