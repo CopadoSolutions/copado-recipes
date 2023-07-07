@@ -7,6 +7,8 @@ A collection of easy-to-digest code examples for copado extension developers. Ea
 ## Features
 `resultTable` component can be used by Copado extension developers to enhance the user experience when displaying result output from raw files or DataJSON related to a result record. By utilizing this component, developers can save time and effort in building their own result viewer from scratch and use this as a starting point.
 
+![Logo](https://github.com/CopadoSolutions/copado-recipes/blob/main/docs/images/Table%20Picture.png)
+
 ## Installation
 To use the result viewer component in your Copado extension project, follow these steps:
 
@@ -20,7 +22,6 @@ sf project deploy start
 ## Usage
 To use this component to display results outputs, you can enter the component name either in the `Job Step`'s or `Function`'s `Result Viewer Component` field as follows:
 ![Logo](https://github.com/CopadoSolutions/copado-recipes/blob/main/docs/images/Configure%20Function%20Result%20Viewer.png)
-
 
 *The ResultViewer component accepts one parameters: `recordId` which is the result Id*
 
