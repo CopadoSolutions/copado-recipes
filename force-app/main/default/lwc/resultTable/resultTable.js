@@ -1,6 +1,6 @@
 import { LightningElement, api, wire, track } from 'lwc';
 import { getRecord, getFieldValue } from 'lightning/uiRecordApi';
-import RESULT_DATA_FIELD from '@salesforce/schema/Result__c.Result_Data__c';
+import RESULT_DATA_FIELD from '@salesforce/schema/copado__Result__c.copado__Result_Data__c';
 
 import jsyamllib from "@salesforce/resourceUrl/jsyamllib";
 import { loadScript } from 'lightning/platformResourceLoader';
