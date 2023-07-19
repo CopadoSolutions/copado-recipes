@@ -15,7 +15,9 @@ To use the result viewer component in your Copado extension project, follow thes
 Clone the Copado Recipe GitHub repository and Include the result viewer component in your **project**:
 ```
 git clone https://github.com/CopadoSolutions/copado-recipes.git
-sf project deploy start
+sf project deploy start -o [target-org] # source tracked environments
+
+sf deploy metadata -o [target-org] # non-source tracked environments
 ```
 
 
