@@ -1,4 +1,4 @@
-# Copado Recipe GitHub Repository
+# Copado Recipes GitHub Repository
 Welcome to the Copado Recipes GitHub repository! This repository contains sample components and recipes to help developers looking to extend or build on top of the Copado Platform to get quickly started. We'll be adding more components in the future.
 
 ## Introduction
